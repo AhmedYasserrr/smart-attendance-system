@@ -1,2 +1,5 @@
+.ruff_cache/
 __pycache__/
 .vscode/
+.venv/
+ml-service/img_db/

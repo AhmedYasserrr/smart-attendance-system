@@ -1,4 +1,7 @@
 import json
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
 
 
 class Configuration:
@@ -6,7 +9,7 @@ class Configuration:
     data = None
 
     def __init__(self, path: str = "config.json"):
-        self.path = path
+        self.path = BASE_DIR / path
         self.data = self.load_config()
 
     def load_config(self):
