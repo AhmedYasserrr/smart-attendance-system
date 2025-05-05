@@ -1,12 +1,27 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/astral-sh/ruff-pre-commit
+  # Python: Ruff linter + formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.
     rev: v0.4.5
     hooks:
-        # Run the linter.
-        - id: ruff
-          args: ["check", "--select", "I", "--fix"]
-        # Run the formatter.
-        - id: ruff-format
+      # Run the linter.
+      - id: ruff
+        args: ["check", "--select", "I", "--fix"]
+      # Run the formatter.
+      - id: ruff-format
+
+  # JavaScript/Node: linter
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.26.0
+    hooks:
+      - id: eslint
+        args:
+          ["--config", "backend/eslint.config.mjs", "--ext", ".js", "backend/"]
+
+  # JavaScript/Node: formatter
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
