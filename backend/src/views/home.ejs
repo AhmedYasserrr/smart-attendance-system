@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn.instructor {
+      background-color: #007bff;
+    }
+    .btn.instructor:hover {
+      background-color: #0056b3;
+    }
+
+    .btn.student {
+      background-color: #28a745;
+    }
+    .btn.student:hover {
+      background-color: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <div class="button-container">
+    <a href="/instructor/dashboard" class="btn instructor">Instructor</a>
+    <a href="/student/attendance" class="btn student">Student</a>
+  </div>
+</body>
+</html>
